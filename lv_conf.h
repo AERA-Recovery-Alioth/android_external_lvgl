@@ -77,7 +77,9 @@
 #define LV_USE_GESTURE_RECOGNITION 0
 #define LV_USE_FLOAT 1
 #define LV_USE_MATRIX 1
-#define LV_DRAW_TRANSFORM_USE_MATRIX 1
+// The bitmap software renderer cannot apply 3x3 draw matrices. Use bounded
+// intermediate layers for widget scaling and rotation instead.
+#define LV_DRAW_TRANSFORM_USE_MATRIX 0
 
 #define LV_FONT_MONTSERRAT_14 1
 #define LV_FONT_MONTSERRAT_16 1
